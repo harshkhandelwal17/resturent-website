@@ -1813,7 +1813,7 @@ const Footer = () => (
               <span className="text-green-400 font-bold text-lg">tastyaana</span>
             </div>
             <p className="text-white/70 mb-4 text-sm">
-              Order your favorite dishes through tastyaana app - powered by NexisSparkX Technologies.
+              Order your favorite dishes through tastyaana app - powered by NexisparkX Technologies.
             </p>
             <a href="https://www.tastyaana.com/" className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-lg hover:from-green-400 hover:to-emerald-400 transition-all duration-300 text-sm font-semibold">
               Visit
