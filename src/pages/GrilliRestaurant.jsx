@@ -122,6 +122,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, isHeaderActive }) => {
                 <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-500 tracking-wider">
                   उसलवाला
                 </div>
+                
               </div>
             </a>
 
