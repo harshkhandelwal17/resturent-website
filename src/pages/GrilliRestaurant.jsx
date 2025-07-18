@@ -624,7 +624,7 @@ const Hero = () => {
                 Why Choose Usalwala?
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                We bring you the authentic taste of Maharashtra with our traditional recipes, 
+                We bring you the authentic taste of mp  with our traditional recipes, 
                 fresh ingredients, and passionate cooking. Every dish is prepared with love and 
                 served with pride.
               </p>
