@@ -21,7 +21,7 @@ const Preloader = ({ isLoading }) => {
 
 // tastyaana Promotion Banner
 const TastyaanaPromo = () => (
-  <div className="bg-gradient-to-r from-green-600 via-green-500 to-emerald-500 py-3 relative overflow-hidden">
+  <div className="bg-gradient-to-r from-green-600 via-green-500 relative top-15 to-emerald-500 py-3  overflow-hidden ">
     <div className="absolute inset-0 opacity-20">
       <div className="w-full h-full bg-white/10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.3)_1px,transparent_0)] bg-[length:20px_20px]"></div>
     </div>
@@ -106,12 +106,12 @@ const Header = ({ isMenuOpen, setIsMenuOpen, isHeaderActive }) => {
 
   return (
     <>
-      <header className={`fixed w-full z-40 transition-all duration-500 ${
+      <header className={`fixed w-full top-0 z-40 transition-all  duration-500 ${
         isHeaderActive 
-          ? 'top-0 bg-black/95 backdrop-blur-md py-3 shadow-xl border-b border-orange-500/30' 
-          : 'top-0 lg:top-8 bg-transparent py-4 lg:py-6'
+          ? 'top-0 bg-black/95 backdrop-blur-md py-4 shadow-xl border-b border-orange-500/30' 
+          : 'top-0 lg:top-0 bg-transparent py-4 lg:py-3 '
       }`}>
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 relative top-0">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <a href="#home" className="flex items-center group z-50">
@@ -190,10 +190,10 @@ const Header = ({ isMenuOpen, setIsMenuOpen, isHeaderActive }) => {
 
           {/* Mobile Action Buttons */}
           <div className="px-6 py-6 space-y-4">
-            <button className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-4 font-semibold uppercase tracking-wider rounded-lg hover:from-green-400 hover:to-emerald-400 transition-all duration-300 flex items-center justify-center gap-2">
+            <a href="https://www.tastyaana.com/" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-4 font-semibold uppercase tracking-wider rounded-lg hover:from-green-400 hover:to-emerald-400 transition-all duration-300 flex items-center justify-center gap-2">
               <Smartphone size={20} />
               Order on tastyaana
-            </button>
+            </a>
             <button className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-4 font-semibold uppercase tracking-wider rounded-lg hover:from-orange-400 hover:to-red-400 transition-all duration-300">
               Book Table
             </button>
@@ -203,8 +203,8 @@ const Header = ({ isMenuOpen, setIsMenuOpen, isHeaderActive }) => {
           <div className="px-6 py-6 border-t border-orange-500/20 bg-gradient-to-r from-orange-500/10 to-red-500/10">
             <div className="text-center">
               <h3 className="text-orange-400 text-xl font-bold mb-4">Visit Us</h3>
-              <p className="text-white/80 mb-2 text-sm">Shop No. 12, Food Street</p>
-              <p className="text-white/80 mb-4 text-sm">Mumbai, Maharashtra 400001</p>
+              <p className="text-white/80 mb-2 text-sm">Scheme No.78</p>
+              <p className="text-white/80 mb-4 text-sm">Indore, Madhya Pradesh 452001</p>
               <p className="text-white/80 mb-6 text-sm">Open: 11:00 AM - 11:00 PM</p>
               <a href="tel:+919876543210" className="text-orange-400 font-bold text-xl hover:text-white transition-colors">
                 +918989266180
@@ -336,6 +336,164 @@ const Header = ({ isMenuOpen, setIsMenuOpen, isHeaderActive }) => {
 //     </section>
 //   );
 // };
+// const Hero = () => {
+//   const [currentSlide, setCurrentSlide] = useState(0);
+  
+//   const heroSlides = [
+//     {
+//       image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+//       subtitle: "Authentic Indian Flavors",
+//       title: "स्वादिष्ट उसल का मज़ा",
+//       text: "Experience the authentic taste of traditional Indian Usal made with love and finest spices"
+//     },
+//     {
+//       image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=2070&q=80",
+//       subtitle: "Fresh & Healthy",
+//       title: "हर दिन ताजा बनाया जाता है",
+//       text: "Fresh ingredients, traditional recipes, and modern hygiene standards for the perfect meal"
+//     },
+//     {
+//       image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=2070&q=80",
+//       subtitle: "Home Delivery Available",
+//       title: "घर बैठे मिले स्वादिष्ट खाना",
+//       text: "Now delivering through tastyaana - Your favorite food delivery partner with best service"
+//     }
+//   ];
+
+//   const nextSlide = () => {
+//     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+//   };
+
+//   const prevSlide = () => {
+//     setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+//   };
+
+//   useEffect(() => {
+//     const interval = setInterval(nextSlide, 6000);
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   return (
+//     <section id="home" className="py-24 bg-gray-50 font-['Plus_Jakarta_Sans']">
+//       <div className="max-w-6xl mx-auto px-6">
+//         <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
+//           {/* Slider Container */}
+//           <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+//             {heroSlides.map((slide, index) => (
+//               <div
+//                 key={index}
+//                 className={`absolute inset-0 transition-all duration-1000 ${
+//                   index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+//                 }`}
+//               >
+//                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+//                 <img
+//                   src={slide.image}
+//                   alt=""
+//                   className="w-full h-full object-cover"
+//                 />
+                
+//                 <div className="absolute inset-0 flex items-center justify-center px-6">
+//                   <div className="text-center max-w-3xl">
+//                     <div className="mb-6">
+//                       <span className="inline-block text-amber-600 text-sm font-medium uppercase tracking-wide bg-white/90 px-4 py-2 rounded-full">
+//                         {slide.subtitle}
+//                       </span>
+//                     </div>
+                    
+//                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-tight">
+//                       {slide.title}
+//                     </h1>
+                    
+//                     <p className="text-base sm:text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+//                       {slide.text}
+//                     </p>
+                    
+//                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+//                       <button className="w-full sm:w-auto bg-green-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2">
+//                         <Smartphone size={18} />
+//                         Order on Tastyaana
+//                       </button>
+//                       <button className="w-full sm:w-auto bg-amber-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-amber-700 transition-colors duration-200">
+//                         View Menu
+//                       </button>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             ))}
+
+//             {/* Navigation Buttons */}
+//             <button
+//               onClick={prevSlide}
+//               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+//             >
+//               <ChevronLeft size={20} />
+//             </button>
+            
+//             <button
+//               onClick={nextSlide}
+//               className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+//             >
+//               <ChevronRight size={20} />
+//             </button>
+
+//             {/* Slide Indicators */}
+//             <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+//               {heroSlides.map((_, index) => (
+//                 <button
+//                   key={index}
+//                   onClick={() => setCurrentSlide(index)}
+//                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
+//                     index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'
+//                   }`}
+//                 />
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Additional Content Below Slider */}
+//         <div className="mt-12 grid md:grid-cols-2 gap-8 items-center">
+//           <div>
+//             <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-4">
+//               Why Choose Usalwala?
+//             </h2>
+//             <p className="text-gray-600 mb-6 leading-relaxed">
+//               We bring you the authentic taste of Maharashtra with our traditional recipes, 
+//               fresh ingredients, and passionate cooking. Every dish is prepared with love and 
+//               served with pride.
+//             </p>
+//             <div className="flex flex-col sm:flex-row gap-4">
+//               <button className="bg-green-600 text-white px-6 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2">
+//                 <Smartphone size={18} />
+//                 Order Now
+//               </button>
+//               <button className="border border-gray-300 text-gray-700 px-6 py-3 font-medium rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors duration-200">
+//                 Call +918989266180
+//               </button>
+//             </div>
+//           </div>
+          
+//           <div className="bg-amber-50 rounded-lg p-6 border border-amber-100">
+//             <h3 className="text-lg font-medium text-gray-900 mb-3">Opening Hours</h3>
+//             <div className="space-y-2 text-sm text-gray-600">
+//               <div className="flex justify-between">
+//                 <span>Monday - Sunday</span>
+//                 <span className="font-medium">11:00 AM - 11:00 PM</span>
+//               </div>
+//               <div className="flex justify-between">
+//                 <span>Kitchen Hours</span>
+//                 <span className="font-medium">11:00 AM - 10:30 PM</span>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
@@ -343,19 +501,19 @@ const Hero = () => {
     {
       image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       subtitle: "Authentic Indian Flavors",
-      title: "स्वादिष्ट उसल का मज़ा",
+      title: "Delicious Usal Experience",
       text: "Experience the authentic taste of traditional Indian Usal made with love and finest spices"
     },
     {
       image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=2070&q=80",
       subtitle: "Fresh & Healthy",
-      title: "हर दिन ताजा बनाया जाता है",
+      title: "Freshly Prepared Every Day",
       text: "Fresh ingredients, traditional recipes, and modern hygiene standards for the perfect meal"
     },
     {
       image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=2070&q=80",
       subtitle: "Home Delivery Available",
-      title: "घर बैठे मिले स्वादिष्ट खाना",
+      title: "Delicious Food Delivered Home",
       text: "Now delivering through tastyaana - Your favorite food delivery partner with best service"
     }
   ];
@@ -374,117 +532,117 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="py-24 bg-gray-50 font-['Plus_Jakarta_Sans']">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
-          {/* Slider Container */}
-          <div className="relative h-[500px] md:h-[600px] overflow-hidden">
-            {heroSlides.map((slide, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-all duration-1000 ${
-                  index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-                }`}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
-                <img
-                  src={slide.image}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+    <section id="home" className="w-full pt-5 mt-10">
+      {/* Hero Slider */}
+      <div className="relative h-[600px] md:h-[700px] overflow-hidden">
+        {heroSlides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-all duration-1000 ${
+              index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+            <img
+              src={slide.image}
+              alt=""
+              className="w-full h-full object-cover"
+            />
+            
+            <div className="absolute inset-0 flex items-center justify-center px-6">
+              <div className="text-center max-w-3xl">
+                <div className="mb-6">
+                  <span className="inline-block text-amber-600 text-sm font-medium uppercase tracking-wide bg-white/90 px-4 py-2 rounded-full">
+                    {slide.subtitle}
+                  </span>
+                </div>
                 
-                <div className="absolute inset-0 flex items-center justify-center px-6">
-                  <div className="text-center max-w-3xl">
-                    <div className="mb-6">
-                      <span className="inline-block text-amber-600 text-sm font-medium uppercase tracking-wide bg-white/90 px-4 py-2 rounded-full">
-                        {slide.subtitle}
-                      </span>
-                    </div>
-                    
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-tight">
-                      {slide.title}
-                    </h1>
-                    
-                    <p className="text-base sm:text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                      {slide.text}
-                    </p>
-                    
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                      <button className="w-full sm:w-auto bg-green-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2">
-                        <Smartphone size={18} />
-                        Order on Tastyaana
-                      </button>
-                      <button className="w-full sm:w-auto bg-amber-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-amber-700 transition-colors duration-200">
-                        View Menu
-                      </button>
-                    </div>
-                  </div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-tight">
+                  {slide.title}
+                </h1>
+                
+                <p className="text-base sm:text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                  {slide.text}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <a href='https://www.tastyaana.com/' className="w-full sm:w-auto bg-green-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2">
+                    <Smartphone size={18} />
+                    Order on Tastyaana
+                  </a>
+                  <button className="w-full sm:w-auto bg-amber-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-amber-700 transition-colors duration-200">
+                    View Menu
+                  </button>
                 </div>
               </div>
-            ))}
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
-            >
-              <ChevronRight size={20} />
-            </button>
-
-            {/* Slide Indicators */}
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
-              {heroSlides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'
-                  }`}
-                />
-              ))}
             </div>
           </div>
+        ))}
+
+        {/* Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm border border-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300"
+        >
+          <ChevronRight size={20} />
+        </button>
+
+        {/* Slide Indicators */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'
+              }`}
+            />
+          ))}
         </div>
+      </div>
 
-        {/* Additional Content Below Slider */}
-        <div className="mt-12 grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-4">
-              Why Choose Usalwala?
-            </h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              We bring you the authentic taste of Maharashtra with our traditional recipes, 
-              fresh ingredients, and passionate cooking. Every dish is prepared with love and 
-              served with pride.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-green-600 text-white px-6 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2">
-                <Smartphone size={18} />
-                Order Now
-              </button>
-              <button className="border border-gray-300 text-gray-700 px-6 py-3 font-medium rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors duration-200">
-                Call +918989266180
-              </button>
-            </div>
-          </div>
-          
-          <div className="bg-amber-50 rounded-lg p-6 border border-amber-100">
-            <h3 className="text-lg font-medium text-gray-900 mb-3">Opening Hours</h3>
-            <div className="space-y-2 text-sm text-gray-600">
-              <div className="flex justify-between">
-                <span>Monday - Sunday</span>
-                <span className="font-medium">11:00 AM - 11:00 PM</span>
+      {/* Additional Content Below Slider */}
+      <div className="bg-white py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-4">
+                Why Choose Usalwala?
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We bring you the authentic taste of Maharashtra with our traditional recipes, 
+                fresh ingredients, and passionate cooking. Every dish is prepared with love and 
+                served with pride.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href='https://www.tastyaana.com/' className="bg-green-600 text-white px-6 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-2">
+                  <Smartphone size={18} />
+                  Order Now
+                </a>
+                <button className="border border-gray-300 text-gray-700 px-6 py-3 font-medium rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors duration-200">
+                  Call +918989266180
+                </button>
               </div>
-              <div className="flex justify-between">
-                <span>Kitchen Hours</span>
-                <span className="font-medium">11:00 AM - 10:30 PM</span>
+            </div>
+            
+            <div className="bg-amber-50 rounded-lg p-6 border border-amber-100">
+              <h3 className="text-lg font-medium text-gray-900 mb-3">Opening Hours</h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <div className="flex justify-between">
+                  <span>Monday - Sunday</span>
+                  <span className="font-medium">11:00 AM - 11:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Kitchen Hours</span>
+                  <span className="font-medium">11:00 AM - 10:30 PM</span>
+                </div>
               </div>
             </div>
           </div>
@@ -493,6 +651,7 @@ const Hero = () => {
     </section>
   );
 };
+
 
 
 
@@ -654,11 +813,11 @@ const Service = () => {
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
             <span className="text-amber-600 text-sm font-extrabold uppercase tracking-wide">
-              Our Specialities
+              
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
-            हमारी विशेषताएं
+          Our Specialities
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
             Experience authentic Indian flavors with our traditional recipes and modern service standards.
@@ -780,11 +939,11 @@ const About = () => (
         <div className="text-center lg:text-left">
           <div className="inline-block mb-4">
             <span className="text-amber-600 text-sm font-medium uppercase tracking-wide">
-              Our Story
+              About Us
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-light font-bold text-gray-900 mb-6">
-            हमारी कहानी
+          <h2 className="text-4xl md:text-5xl  font-medium text-gray-900 mb-6">
+            Our Story
           </h2>
           <p className="text-gray-600 mb-8 text-lg leading-relaxed">
             For over a decade, Usalwala has been serving authentic Indian flavors with love and dedication. Our journey began with a simple mission: to bring the taste of home-cooked meals to everyone who craves authentic Indian cuisine.
@@ -982,10 +1141,10 @@ const Menu1 = () => {
             Kitchen Hours: Daily from <span className="text-amber-600 font-medium">11:00 AM</span> to <span className="text-amber-600 font-medium">11:00 PM</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-green-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center gap-2 justify-center">
+            <a href='https://www.tastyaana.com/' className="bg-green-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 flex items-center gap-2 justify-center">
               <Smartphone size={18} />
               Order on Tastyaana
-            </button>
+            </a>
             <button className="bg-amber-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-amber-700 transition-colors duration-200">
               View Full Menu
             </button>
@@ -1100,21 +1259,21 @@ const Testimonial = () => {
   const testimonials = [
     {
       text: "उसलवाला का खाना बहुत ही स्वादिष्ट है! घर जैसा स्वाद मिलता है। अब tastyaana पर भी मिल रहा है जो और भी अच्छी बात है।",
-      author: "रोहित शर्मा",
+      author: "Mr.Rohit Sharma",
       position: "Regular Customer",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
       rating: 5
     },
     {
       text: "The quality of food is exceptional! Their tiffin service has made my office lunch so much better. Highly recommend!",
-      author: "प्रिया पटेल",
+      author: "Ms.Priya Patel",
       position: "Office Worker",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b1a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
       rating: 5
     },
     {
       text: "Best Misal Pav in the city! The spice level is perfect and the taste is authentic. Will definitely order again through tastyaana.",
-      author: "अमित कुमार",
+      author: "Mr. Amit Kumar",
       position: "Food Blogger",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
       rating: 5
@@ -1136,11 +1295,11 @@ const Testimonial = () => {
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
             <span className="text-amber-600 text-sm font-medium uppercase tracking-wide">
-              Customer Reviews
+              Hear from Our Customers
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl  text-gray-900 mb-6">
-            ग्राहकों की प्रतिक्रिया
+          Customer Reviews
           </h2>
         </div>
 
@@ -1334,14 +1493,14 @@ const Reservation = () => (
       <div className="text-center mb-20">
         <div className="inline-block mb-4">
           <span className="text-amber-600 text-sm uppercase tracking-wide">
-            Contact Us
+            Talk to Us
           </span>
         </div>
         <h2 className="text-4xl md:text-5xl text-gray-900 mb-6">
-          संपर्क करें
+          Contact Us
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-          आज ही ऑर्डर करें या हमसे संपर्क करें। tastyaana ऐप पर भी उपलब्ध है।
+          Order or Contact Us Now!  Available on Tastyaana App.
         </p>
       </div>
 
@@ -1446,10 +1605,10 @@ const Reservation = () => (
             <div className="bg-green-50 rounded-lg p-6 text-center border border-green-100">
               <Smartphone className="text-green-600 mx-auto mb-4" size={24} />
               <h4 className="text-green-600 font-medium mb-2">Order Online</h4>
-              <p className="text-gray-600 mb-4">Available on tastyaana App</p>
-              <button className="bg-green-600 text-white px-6 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm">
-                Download App
-              </button>
+              <p className="text-gray-600 mb-4">Available on tastyaana </p>
+              <a href="https://www.tastyaana.com/" className="bg-green-600 text-white px-6 py-3 font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm">
+                Visit Tastyaana
+              </a>
             </div>
           </div>
         </div>
@@ -1553,11 +1712,11 @@ const Features = () => {
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
             <span className="text-amber-600 text-sm font-medium uppercase tracking-wide">
-              Why Choose Us
+              Our Features
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl text-gray-900 mb-6">
-            हमें क्यों चुनें
+            Why Choose Us?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
             Experience the difference with our commitment to quality, authenticity, and exceptional service.
@@ -1610,7 +1769,7 @@ const Footer = () => (
           <div className="space-y-3 mb-6">
             <div className="flex items-center gap-3">
               <MapPin className="text-orange-400" size={20} />
-              <span className="text-white/70">Shop No. 12, Food Street, Mumbai, Maharashtra 400001</span>
+              <span className="text-white/70">Scheme No. 78, Indore, Madhya Pradesh</span>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="text-orange-400" size={20} />
@@ -1656,9 +1815,9 @@ const Footer = () => (
             <p className="text-white/70 mb-4 text-sm">
               Order your favorite dishes through tastyaana app - powered by NexisSparkX Technologies.
             </p>
-            <button className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-lg hover:from-green-400 hover:to-emerald-400 transition-all duration-300 text-sm font-semibold">
-              Download Now
-            </button>
+            <a href="https://www.tastyaana.com/" className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-lg hover:from-green-400 hover:to-emerald-400 transition-all duration-300 text-sm font-semibold">
+              Visit
+            </a>
           </div>
         </div>
       </div>
