@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Menu, X, MapPin, Clock, Phone, Mail, ArrowUp, Calendar, User, Star, Play, Award, Users, Utensils, Coffee, Smartphone, Truck, ShoppingBag, Heart, Gift, Zap } from 'lucide-react';
+import menu from "./products.js";
+import MenuCards from './MenuCards.jsx';
+import logo from "../assets/logo.jpg"
 
 // Preloader Component
 const Preloader = ({ isLoading }) => {
@@ -21,7 +24,7 @@ const Preloader = ({ isLoading }) => {
 
 // tastyaana Promotion Banner
 const TastyaanaPromo = () => (
-  <div className="bg-gradient-to-r from-green-600 via-green-500 relative top-15 to-emerald-500 py-3  overflow-hidden ">
+  <div className="bg-gradient-to-r from-green-600 via-green-500 relative top-20 to-emerald-500 py-3  overflow-hidden ">
     <div className="absolute inset-0 opacity-20">
       <div className="w-full h-full bg-white/10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.3)_1px,transparent_0)] bg-[length:20px_20px]"></div>
     </div>
@@ -75,7 +78,7 @@ const TopBar = ({ isHeaderActive }) => (
       <div className="flex justify-center items-center gap-8 text-sm">
         <div className="flex items-center gap-2 text-gray-600 hover:text-amber-600 transition-colors">
           <MapPin size={16} className="text-amber-600" />
-          <span>Shop No. 12, Indore, Madhya Pradesh, 452001</span>
+          <span>135, Scheme no. 78 Part II, Vijay nagar , Near Brilliant Convention Center, Behind Ana Convent School, Indore, Madhya Pradesh, 452001</span>
         </div>
         <div className="w-px h-4 bg-gray-300"></div>
         <div className="flex items-center gap-2 text-gray-600 hover:text-amber-600 transition-colors">
@@ -116,11 +119,14 @@ const Header = ({ isMenuOpen, setIsMenuOpen, isHeaderActive }) => {
             {/* Logo */}
             <a href="#home" className="flex items-center group z-50">
               <div className="flex items-center gap-2 sm:gap-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
-                  <span className="text-white font-bold text-lg sm:text-xl">उ</span>
-                </div>
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-500 tracking-wider">
-                  उसलवाला
+                <img src={logo} height="50px" width="50px" className='rounded-full'></img>
+                <div className="flex flex-col">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-500 tracking-wider">
+                    उसलवाला
+                  </div>
+                  <div className="text-xs sm:text-sm text-orange-400/80 italic tracking-wide -mt-1">
+                    by indori yummy taste
+                  </div>
                 </div>
                 
               </div>
@@ -204,11 +210,11 @@ const Header = ({ isMenuOpen, setIsMenuOpen, isHeaderActive }) => {
           <div className="px-6 py-6 border-t border-orange-500/20 bg-gradient-to-r from-orange-500/10 to-red-500/10">
             <div className="text-center">
               <h3 className="text-orange-400 text-xl font-bold mb-4">Visit Us</h3>
-              <p className="text-white/80 mb-2 text-sm">Scheme No.78</p>
+              <p className="text-white/80 mb-2 text-sm">135, Scheme no. 78 Part II, Vijay nagar , Near Brilliant Convention Center, Behind Ana Convent School</p>
               <p className="text-white/80 mb-4 text-sm">Indore, Madhya Pradesh 452001</p>
               <p className="text-white/80 mb-6 text-sm">Open: 11:00 AM - 11:00 PM</p>
               <a href="tel:+919876543210" className="text-orange-400 font-bold text-xl hover:text-white transition-colors">
-                +918989266180
+                +919691954035
               </a>
             </div>
           </div>
@@ -533,7 +539,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="w-full pt-5 mt-10">
+    <section id="home" className="w-full pt-10 mt-10">
       {/* Hero Slider */}
       <div className="relative h-[600px] md:h-[700px] overflow-hidden">
         {heroSlides.map((slide, index) => (
@@ -628,7 +634,7 @@ const Hero = () => {
                   Order Now
                 </a>
                 <button className="border border-gray-300 text-gray-700 px-6 py-3 font-medium rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors duration-200">
-                  Call +918989266180
+                  Call +919691954035
                 </button>
               </div>
             </div>
@@ -637,12 +643,12 @@ const Hero = () => {
               <h3 className="text-lg font-medium text-gray-900 mb-3">Opening Hours</h3>
               <div className="space-y-2 text-sm text-gray-600">
                 <div className="flex justify-between">
-                  <span>Monday - Sunday</span>
-                  <span className="font-medium">11:00 AM - 11:00 PM</span>
+                  <span>Morning</span>
+                  <span className="font-medium">7:00 AM - 12:00 PM</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Kitchen Hours</span>
-                  <span className="font-medium">11:00 AM - 10:30 PM</span>
+                  <span>Evening</span>
+                  <span className="font-medium">12:00 PM - 4:00 PM</span>
                 </div>
               </div>
             </div>
@@ -657,14 +663,15 @@ const Hero = () => {
 
 
 // tastyaana Partnership Section
-const tastyaanaPartnership = () => (
+const TastyaanaPartnership = () => (
   <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-green-50 to-emerald-50">
     <div className="container mx-auto px-4 sm:px-6">
       <div className="text-center mb-12 sm:mb-16">
         <div className="flex justify-center items-center gap-3 sm:gap-4 mb-6">
-          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
+          {/* <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
             <span className="text-white font-bold text-lg sm:text-2xl">उ</span>
-          </div>
+          </div> */}
+            <img src={logo} height="50px" width="50px" className='rounded-full'></img>
           <div className="text-2xl sm:text-4xl font-bold text-gray-800">+</div>
           <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
             <Smartphone className="text-white" size={20} />
@@ -674,7 +681,7 @@ const tastyaanaPartnership = () => (
           अब <span className="text-green-600">tastyaana</span> पर भी उपलब्ध
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed px-4">
-          Now enjoy your favorite Usal dishes through tastyaana - the premium food delivery service by NexisSparkX Technologies. Best food, best service, delivered to your doorstep!
+          Now enjoy your favorite dishes through tastyaana - the premium food delivery service. Best food, best service, delivered to your doorstep!
         </p>
       </div>
 
@@ -704,10 +711,10 @@ const tastyaanaPartnership = () => (
         </div>
       </div>
 
-      <div className="text-center mt-8 sm:mt-12">
+      <div className="text-center mt-8 sm:mt-12 w-full flex justify-center">
         <button className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold uppercase tracking-wider rounded-lg hover:from-green-400 hover:to-emerald-400 transition-all duration-300 shadow-lg hover:shadow-green-500/25 transform hover:scale-105 flex items-center gap-2 justify-center">
           <Smartphone size={18} />
-          Download tastyaana App
+          Visit tastyaana 
         </button>
       </div>
     </div>
@@ -790,8 +797,8 @@ const Service = () => {
   const services = [
     { 
       image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      title: "Traditional Usal",
-      description: "Authentic Maharashtrian Usal made with traditional spices and recipes",
+      title: "Traditional Taste",
+      description: "Authentic taste made with traditional spices and recipes",
       icon: Utensils
     },
     { 
@@ -847,9 +854,9 @@ const Service = () => {
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   {service.description}
                 </p>
-                <button className="text-amber-600 font-medium text-sm hover:text-amber-700 transition-colors">
+                {/* <button className="text-amber-600 font-medium text-sm hover:text-amber-700 transition-colors">
                   Learn More
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
@@ -966,16 +973,16 @@ const About = () => (
           <div className="bg-amber-50 rounded-lg p-6 mb-8 border border-amber-100">
             <p className="text-amber-700 font-medium mb-2">Order Through Call</p>
             <a
-              href="tel:+918989266180"
+              href="tel:+918989266190"
               className="text-gray-900 text-2xl font-medium hover:text-amber-600 transition-colors"
             >
-              +918989266180
+              +918989266190
             </a>
           </div>
           
-          <button className="bg-amber-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-amber-700 transition-colors duration-200">
+          {/* <button className="bg-amber-600 text-white px-8 py-3 font-medium rounded-lg hover:bg-amber-700 transition-colors duration-200">
             Learn More
-          </button>
+          </button> */}
         </div>
 
         <div className="relative">
@@ -1085,7 +1092,7 @@ const Menu1 = () => {
         </div>
 
         {/* Menu Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {/* <div className="grid md:grid-cols-2 gap-8 mb-16">
           {menuItems.map((item, index) => (
             <div key={index} className="group bg-white rounded-lg border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg">
               <div className="p-8">
@@ -1134,7 +1141,8 @@ const Menu1 = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
+        <MenuCards/>
 
         {/* Footer Section */}
         <div className="text-center bg-gray-50 rounded-lg p-8 border border-gray-100">
@@ -1580,8 +1588,8 @@ const Reservation = () => (
             <div className="bg-white rounded-lg p-6 text-center border border-gray-100">
               <Phone className="text-amber-600 mx-auto mb-4" size={24} />
               <h4 className="text-amber-600 font-medium mb-2">Call Us</h4>
-              <a href="tel:+918989266180" className="text-gray-900 text-lg font-medium hover:text-amber-600 transition-colors">
-                +918989266180
+              <a href="tel:+919691954035" className="text-gray-900 text-lg font-medium hover:text-amber-600 transition-colors">
+                +919691954035
               </a>
             </div>
 
@@ -1589,7 +1597,7 @@ const Reservation = () => (
               <MapPin className="text-amber-600 mx-auto mb-4" size={24} />
               <h4 className="text-amber-600 font-medium mb-2">Visit Us</h4>
               <address className="text-gray-600 not-italic">
-                Shop No. 12, Indore<br />
+              135, Scheme no. 78 Part II, Vijay nagar , Near Brilliant Convention Center, Behind Ana Convent School, Indore<br />
                 Madhya Pradesh 452001
               </address>
             </div>
@@ -1599,7 +1607,7 @@ const Reservation = () => (
               <h4 className="text-amber-600 font-medium mb-2">Opening Hours</h4>
               <p className="text-gray-600">
                 Monday - Sunday<br />
-                11:00 AM - 11:00 PM
+                7:00 AM - 4:00 PM
               </p>
             </div>
 
@@ -1758,10 +1766,11 @@ const Footer = () => (
         {/* Brand Section */}
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">उ</span>
-            </div>
+            <img src={logo} height="50px" width="50px" className='rounded-full'></img>
             <div className="text-3xl font-bold text-orange-400">उसलवाला</div>
+            <div className="text-xs sm:text-sm text-orange-400/80 italic tracking-wide -mt-1">
+                    by indori yummy taste
+                  </div>
           </div>
           <p className="text-white/70 mb-6 leading-relaxed">
             Serving authentic Indian flavors with love and dedication for over a decade. Now available on tastyaana for your convenience.
@@ -1770,18 +1779,18 @@ const Footer = () => (
           <div className="space-y-3 mb-6">
             <div className="flex items-center gap-3">
               <MapPin className="text-orange-400" size={20} />
-              <span className="text-white/70">Scheme No. 78, Indore, Madhya Pradesh</span>
+              <span className="text-white/70">135, Scheme no. 78 Part II, Vijay nagar , Near Brilliant Convention Center, Behind Ana Convent School, Indore, Madhya Pradesh</span>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="text-orange-400" size={20} />
-              <a href="tel:+919876543210" className="text-white/70 hover:text-orange-400 transition-colors">
-                +918989266180
+              <a href="tel:+919691954035" className="text-white/70 hover:text-orange-400 transition-colors">
+                +919691954035
               </a>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="text-orange-400" size={20} />
-              <a href="mailto:info@usalwala.com" className="text-white/70 hover:text-orange-400 transition-colors">
-                info@usalwala.com
+              <a href="mailto:indoreyummytaste@gmail.com" className="text-white/70 hover:text-orange-400 transition-colors">
+              indoreyummytaste@gmail.com
               </a>
             </div>
           </div>
@@ -1826,7 +1835,7 @@ const Footer = () => (
       <div className="border-t border-white/20 pt-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/70 text-center md:text-left">
-            © 2025 उसलवाला. All rights reserved. Developed by <span className="text-orange-400 font-semibold">NexisSparkX Technologies</span>
+            © 2025 उसलवाला. All rights reserved. Developed by <span className="text-orange-400 font-semibold">NexisparkX Technologies</span>
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-white/70 hover:text-orange-400 transition-colors">Privacy Policy</a>
@@ -1911,7 +1920,7 @@ const UsalawalRestaurant = () => {
             isHeaderActive={isHeaderActive} 
           />
           <Hero currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
-          <tastyaanaPartnership />
+          <TastyaanaPartnership />
           <Service />
           <About />
           <Menu1 />
